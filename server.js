@@ -1,5 +1,5 @@
-const app = express();
 const express = require('express');
+const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Hard-coded JSON objects with nested structure
