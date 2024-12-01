@@ -8,6 +8,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <h2>TU TOWSON UNIVERSITY</h2>
+      <ul>
       <nav>
         <Link to="/"><FaHome /> Home</Link>
         <Link to="/course-catalog"><FaBook /> Course Catalog</Link>
@@ -17,6 +18,7 @@ function Sidebar() {
         <Link to="/internships"><HiAcademicCap /> Internships</Link>
         <Link to="/settings"><FaCog /> Settings</Link>
       </nav>
+      </ul>
     </div>
   );
 }
