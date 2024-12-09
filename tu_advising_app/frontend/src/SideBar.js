@@ -3,21 +3,22 @@ import { FaHome, FaBook, FaUser, FaComments, FaExchangeAlt, FaCog } from "react-
 import { HiAcademicCap } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import "./Styles/SideBar.css";
+import Logo from '../src/Images/towson-university-logo.png';
 
 function Sidebar() {
   return (
-    <div className="sidebar">
-      <h2>TU TOWSON UNIVERSITY</h2>
+    <div className="SideBar">
+      <img src={Logo} alt="Towson Logo" />
       <ul>
-      <nav>
-        <Link to="/"><FaHome /> Home</Link>
-        <Link to="/course-catalog"><FaBook /> Course Catalog</Link>
-        <Link to="/profile"><FaUser /> My Profile</Link>
-        <Link to="/advising"><FaComments /> Advising Help</Link>
-        <Link to="/transfers"><FaExchangeAlt /> Transfers</Link>
-        <Link to="/internships"><HiAcademicCap /> Internships</Link>
-        <Link to="/settings"><FaCog /> Settings</Link>
-      </nav>
+        <nav>
+          <Link to="/"><FaHome /> Home</Link>
+          <Link to="/course-catalog"><FaBook /> Course Catalog</Link>
+          <Link to="/profile"><FaUser /> My Profile</Link>
+          <Link to="/advising"><FaComments /> Advising Help</Link>
+          <Link to="/transfers"><FaExchangeAlt /> Transfers</Link>
+          <Link to="/internships"><HiAcademicCap /> Internships</Link>
+          <Link to="/settings"><FaCog /> Settings</Link>
+        </nav>
       </ul>
     </div>
   );

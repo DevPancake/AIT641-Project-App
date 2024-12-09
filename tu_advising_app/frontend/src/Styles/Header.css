@@ -1,0 +1,40 @@
+/* Header styling */
+.header {
+    background-color: #ffc107;
+    grid-column: 1 / 3;  /* Header spans both columns */
+    grid-row: 1 / 2;     /* Header is in the first row */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+  }
+  
+  /* Title inside the header */
+  .header h1 {
+    margin: 0;
+    margin-left: 15px; 
+    font-size: 30px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+  }
+  
+  /* Right side of the header (search input and icons) */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .header-right input {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .header-right span {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  

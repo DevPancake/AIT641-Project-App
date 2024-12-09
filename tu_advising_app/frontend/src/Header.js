@@ -7,8 +7,6 @@ function Header() {
       <h1>Advising Portal</h1>
       <div className="header-right">
         <input type="text" placeholder="Search..." />
-        <span role="img" aria-label="email">📧</span>
-        <span role="img" aria-label="notification">🔔</span>
       </div>
     </header>
   );

@@ -11,29 +11,49 @@ import ChatIcon from "./Images/towson_tigers_logo_mascot.png";
 function App() {
   const [showChatBubble, setShowChatBubble] = useState(true);
   const [firstOpen, setFirstOpen] = useState(true);
-   // Toggle chat bubble visibility
-   const toggleChatBubble = () => {
+
+  // Toggle chat bubble visibility
+  const toggleChatBubble = () => {
     setShowChatBubble(true);
   };
+
   return (
     <Router>
-      <div className="app">
-        <Sidebar />
-        <div className="main-content">
+      <div className="App">
+        <div className="sidebar">
+          <Sidebar />
+        </div>
+        <div className="main">
+          <div className="header">
           <Header />
-          {/* Clickable image at the bottom-right corner */}
-          {!showChatBubble && (
-            <div className="clickable-image" onClick={toggleChatBubble}>
-              <img src={ChatIcon} alt="Clickable Icon" />
-            </div>
-          )}
-          {/* ChatBubble component */}
-          {firstOpen && showChatBubble && <ChatBubble setFirstOpen={setFirstOpen} isIntro={true} setShowChatBubble={setShowChatBubble}/>}
-          {!firstOpen && showChatBubble && <ChatBubble setFirstOpen={setFirstOpen} isIntro={false} setShowChatBubble={setShowChatBubble}/>}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/course-catalog" element={<CourseCatalog />} />
-          </Routes>
+          </div>
+          <div className="content">
+            {/* Clickable image at the bottom-right corner */}
+            {!showChatBubble && (
+              <div className="clickable-image" onClick={toggleChatBubble}>
+                <img src={ChatIcon} alt="Clickable Icon" />
+              </div>
+            )}
+            {/* ChatBubble component */}
+            {firstOpen && showChatBubble && (
+              <ChatBubble
+                setFirstOpen={setFirstOpen}
+                isIntro={true}
+                setShowChatBubble={setShowChatBubble}
+              />
+            )}
+            {!firstOpen && showChatBubble && (
+              <ChatBubble
+                setFirstOpen={setFirstOpen}
+                isIntro={false}
+                setShowChatBubble={setShowChatBubble}
+              />
+            )}
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/course-catalog" element={<CourseCatalog />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </Router>
@@ -41,4 +61,3 @@ function App() {
 }
 
 export default App;
-
