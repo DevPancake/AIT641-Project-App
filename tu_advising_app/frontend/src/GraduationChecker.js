@@ -3,7 +3,7 @@ import "./Styles/GraduationChecker.css";
 import { fetchData } from './fetch';
 
 function GraduationChecker() {
-  const [selectedTab, setSelectedTab] = useState("COMP");
+  const [selectedTab, setSelectedTab] = useState("COSC");
   const [studentLevel, setStudentLevel] = useState('Undergraduate');
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -81,7 +81,7 @@ function GraduationChecker() {
           className={selectedTab === "COSC" ? "tab active" : "tab"}
           onClick={() => handleTabClick("COSC")}
         >
-          COMP
+          COSC
         </button>
         <button
           className={selectedTab === "AIT" ? "tab active" : "tab"}
