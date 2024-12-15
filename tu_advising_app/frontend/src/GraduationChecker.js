@@ -121,7 +121,7 @@ function GraduationChecker() {
                 onChange={() => handleCourseSelection(course.catalogNumber)}
               />
               <label htmlFor={course.catalogNumber}>
-                <div className="title">{course.title}</div> COSC: {course.catalogNumber}
+                <span className="title">{course.title}</span> COSC: {course.catalogNumber}
               </label>
             </div>
           ))}
@@ -135,14 +135,20 @@ function GraduationChecker() {
         <div className="graduation-result">
           <h3>Graduation Eligibility Status</h3>
           <ul>
-            <li>All core classes completed: {graduationResult.hasAllCoreClasses ? 'Yes' : 'No'}</li>
-            <li>Capstone class completed: {graduationResult.hasCapstoneClass ? 'Yes' : 'No'}</li>
-            <li>Total credits earned: {graduationResult.totalCredits}</li>
+            <li>
+                All core classes completed: <span className={graduationResult.hasAllCoreClasses ? 'green' : 'red'}>{graduationResult.hasAllCoreClasses ? 'Yes' : 'No'}</span>
+            </li>
+            <li>
+                Capstone class completed: <span className={graduationResult.hasCapstoneClass ? 'green' : 'red'}>{graduationResult.hasCapstoneClass ? 'Yes' : 'No'}</span>
+            </li>
+            <li>
+                Total credits earned: <span className={graduationResult.totalCredits >= 33 ? 'green' : 'red'}>{graduationResult.totalCredits}</span>
+            </li>
           </ul>
           {graduationResult.eligibleForGraduation ? (
-            <p>You are eligible for graduation!</p>
+            <p><b>You are eligible for graduation! 🥳</b></p>
           ) : (
-            <p>You are not eligible for graduation.</p>
+            <p>You are <b>not</b> eligible for graduation.</p>
           )}
         </div>
       )}

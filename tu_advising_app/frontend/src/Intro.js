@@ -20,7 +20,7 @@ function Intro() {
             </li>
             </ul>
             <p>
-            Let's make sure you're set up for success this semester!
+            If you need anything feel free to <b>click</b> one me!
             </p>
         </>
     )

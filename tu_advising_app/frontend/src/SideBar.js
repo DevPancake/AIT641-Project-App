@@ -13,7 +13,6 @@ function Sidebar() {
         <nav>
           <Link to="/"><FaHome /> Home</Link>
           <Link to="/course-catalog"><FaBook /> Course Catalog</Link>
-          <Link to="/profile"><FaUser /> My Profile</Link>
           <Link to="/graduation"><FaUser /> Graduation Checker</Link>
           <Link to="/advising"><FaComments /> Advising Help</Link>
           <Link to="/transfers"><FaExchangeAlt /> Transfers</Link>

@@ -123,4 +123,14 @@
   .check-graduation-button:hover {
     background-color: #45a049;
   }
-  
+  /* Green styling for positive outcomes */
+.green {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Red styling for negative outcomes */
+.red {
+  color: #dc3545;
+  font-weight: bold;
+}
