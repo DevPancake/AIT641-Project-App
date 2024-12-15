@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const courseData = JSON.parse(fs.readFileSync('courses.json')).courses;
+const courseData = JSON.parse(fs.readFileSync('coursesChatbot.json')).courses;
 
 function buildCourseGraph() {
     const graph = {};

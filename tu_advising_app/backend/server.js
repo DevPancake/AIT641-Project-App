@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { getRecommendations } = require('./chatbot'); // Import the chatbot logic
+const { checkGraduation } = require('./graduationChecker'); // Import the graduation checker function
+const fs = require('fs'); // Import file system module to read the JSON file
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -9,7 +11,19 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
-let waitingForCourses = false;  // Track if the server is waiting for course input
+let waitingForCourses = false; // Track if the server is waiting for course input
+
+// Load course data from coursesCompsci.json
+const dataFilePath = './coursesCompsci.json';
+let data = [];
+
+try {
+    const fileContent = fs.readFileSync(dataFilePath, 'utf8');
+    data = JSON.parse(fileContent);
+    console.log('Course data loaded successfully.');
+} catch (error) {
+    console.error('Error loading course data:', error);
+}
 
 // Unified endpoint to handle all chatbot interactions
 app.post('/api/chat', (req, res) => {
@@ -89,6 +103,29 @@ app.post('/api/chat', (req, res) => {
     }
 
     res.json({ response });
+});
+
+// API endpoint to send JSON data
+app.get('/api/data', (req, res) => {
+    res.json(data);
+});
+
+// API endpoint for graduation check
+app.post('/api/graduation-checker', (req, res) => {
+    const { completedCourses } = req.body;
+
+    // Validate input
+    if (!Array.isArray(completedCourses) || completedCourses.some(isNaN)) {
+        return res.status(400).json({ error: 'Invalid input. "completedCourses" must be an array of course IDs (numbers).' });
+    }
+
+    try {
+        const result = checkGraduation(completedCourses);
+        res.json(result);
+    } catch (error) {
+        console.error('Error checking graduation eligibility:', error);
+        res.status(500).json({ error: 'An error occurred while checking graduation eligibility.' });
+    }
 });
 
 app.listen(PORT, () => {

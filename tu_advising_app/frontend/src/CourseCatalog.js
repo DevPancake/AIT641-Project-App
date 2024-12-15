@@ -25,10 +25,11 @@ function CourseCatalog() {
 
     try {
       const data = await fetchData();
-      if (data) {
+      let courseData = data.courses;
+      if (courseData) {
         // Assuming the API returns courses data in a similar format to the local data
-        console.log(data);
-        setCourses(data); // Update the courses with API data
+        console.log(courseData);
+        setCourses(courseData); // Update the courses with API data
       } else {
         setError('No data found.');
       }

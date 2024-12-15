@@ -7,6 +7,7 @@ import CourseCatalog from "./CourseCatalog";
 import "./Styles/App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ChatIcon from "./Images/towson_tigers_logo_mascot.png";
+import GraduationChecker from "./GraduationChecker";
 
 function App() {
   const [showChatBubble, setShowChatBubble] = useState(true);
@@ -52,6 +53,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/course-catalog" element={<CourseCatalog />} />
+              <Route path="/graduation" element={<GraduationChecker />} />
             </Routes>
           </div>
         </div>
