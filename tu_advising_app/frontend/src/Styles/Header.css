@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
   /* Title inside the header */
@@ -36,5 +36,9 @@
   .header-right span {
     font-size: 20px;
     cursor: pointer;
+  }
+
+  #studentLevel{
+    margin-left: 10px;
   }
   
